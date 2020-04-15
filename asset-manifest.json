@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/FMGordillo/jpmorgan-selection-react/static/css/main.0c907582.chunk.css",
+    "main.js": "/FMGordillo/jpmorgan-selection-react/static/js/main.598131a3.chunk.js",
+    "main.js.map": "/FMGordillo/jpmorgan-selection-react/static/js/main.598131a3.chunk.js.map",
+    "runtime-main.js": "/FMGordillo/jpmorgan-selection-react/static/js/runtime-main.c057c2a3.js",
+    "runtime-main.js.map": "/FMGordillo/jpmorgan-selection-react/static/js/runtime-main.c057c2a3.js.map",
+    "static/css/2.ce91367d.chunk.css": "/FMGordillo/jpmorgan-selection-react/static/css/2.ce91367d.chunk.css",
+    "static/js/2.b50e86bc.chunk.js": "/FMGordillo/jpmorgan-selection-react/static/js/2.b50e86bc.chunk.js",
+    "static/js/2.b50e86bc.chunk.js.map": "/FMGordillo/jpmorgan-selection-react/static/js/2.b50e86bc.chunk.js.map",
+    "index.html": "/FMGordillo/jpmorgan-selection-react/index.html",
+    "precache-manifest.5d751b2ae9d93b58414fc56f3dfa5b2c.js": "/FMGordillo/jpmorgan-selection-react/precache-manifest.5d751b2ae9d93b58414fc56f3dfa5b2c.js",
+    "service-worker.js": "/FMGordillo/jpmorgan-selection-react/service-worker.js",
+    "static/css/2.ce91367d.chunk.css.map": "/FMGordillo/jpmorgan-selection-react/static/css/2.ce91367d.chunk.css.map",
+    "static/css/main.0c907582.chunk.css.map": "/FMGordillo/jpmorgan-selection-react/static/css/main.0c907582.chunk.css.map",
+    "static/js/2.b50e86bc.chunk.js.LICENSE.txt": "/FMGordillo/jpmorgan-selection-react/static/js/2.b50e86bc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c057c2a3.js",
+    "static/css/2.ce91367d.chunk.css",
+    "static/js/2.b50e86bc.chunk.js",
+    "static/css/main.0c907582.chunk.css",
+    "static/js/main.598131a3.chunk.js"
+  ]
+}
