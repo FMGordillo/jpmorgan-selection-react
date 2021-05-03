@@ -9,6 +9,7 @@ import {
   Heading,
 } from "react-bulma-components";
 import { getCategories, getEvents } from "./api";
+import { Category, Event } from "./types";
 
 const containerStyle = {
   display: "flex",
@@ -40,17 +41,17 @@ function App() {
           </Container>
         </Hero.Body>
       </Hero>
-      <Categories data={categories} loading={loading} events={events} />
+      <Categories categories={categories} loading={loading} events={events} />
     </>
   );
 }
-
+// @ts-ignore
 const Categories: FunctionComponent<{
-  data: unknown[];
-  events: unknown[];
+  categories: Category[];
+  events: Event[];
   loading: boolean;
-}> = ({ data = [], events = [], loading }) => {
-  if (data.length < 0 || loading) {
+}> = ({ categories = [], events = [], loading }) => {
+  if (categories.length < 0 || loading) {
     return (
       <Hero>
         <Hero.Body>
@@ -60,43 +61,44 @@ const Categories: FunctionComponent<{
         </Hero.Body>
       </Hero>
     );
-  }
-  return data.map((i) => (
-    <Hero key={i.id}>
-      <Hero.Body>
-        <Container>
-          <Heading>{i.name}</Heading>
+  } else {
+    return categories.map((i) => (
+      <Hero key={i.id}>
+        <Hero.Body>
+          <Container>
+            <Heading>{i.name}</Heading>
+          </Container>
+        </Hero.Body>
+        <Container
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gridColumnGap: "3rem",
+          }}
+        >
+          {events
+            .filter((event) => event.categoryId === i.id)
+            .map((event, k) => (
+              <Card key={k}>
+                <Card.Header>
+                  <Card.Header.Title>{event.name}</Card.Header.Title>
+                </Card.Header>
+                <Card.Content>
+                  <Content>
+                    <b>Description</b>: {event.description}
+                    <br />
+                    <b>Location</b>: {event.location}
+                    <br />
+                    <b>Date</b>: {event.date}
+                    <Button style={{ alignSelf: "flex-end" }}>JOIN</Button>
+                  </Content>
+                </Card.Content>
+              </Card>
+            ))}
         </Container>
-      </Hero.Body>
-      <Container
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gridColumnGap: "3rem",
-        }}
-      >
-        {events
-          .filter((event) => event.categoryId === i.id)
-          .map((event, k) => (
-            <Card key={k}>
-              <Card.Header>
-                <Card.Header.Title>{event.name}</Card.Header.Title>
-              </Card.Header>
-              <Card.Content>
-                <Content>
-                  <b>Description</b>: {event.description}
-                  <br />
-                  <b>Location</b>: {event.location}
-                  <br />
-                  <b>Date</b>: {event.date}
-                  <Button style={{ alignSelf: "flex-end" }}>JOIN</Button>
-                </Content>
-              </Card.Content>
-            </Card>
-          ))}
-      </Container>
-    </Hero>
-  ));
+      </Hero>
+    ));
+  }
 };
 
 export default App;
