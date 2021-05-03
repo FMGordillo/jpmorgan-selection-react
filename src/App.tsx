@@ -1,11 +1,18 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
-import { Button, Card, Content, Container, Hero, Title } from "reactbulma";
+import React, { useState, useEffect, FunctionComponent } from "react";
+import {
+  Button,
+  Card,
+  Content,
+  Container,
+  Hero,
+  Heading,
+} from "react-bulma-components";
 import { getCategories, getEvents } from "./api";
 
 const containerStyle = {
   display: "flex",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
 };
 
 function App() {
@@ -15,7 +22,7 @@ function App() {
 
   useEffect(() => {
     axios.all([getCategories(), getEvents()]).then(
-      axios.spread(function(categories, events) {
+      axios.spread(function (categories, events) {
         setCategories(categories.data);
         setEvents(events.data);
         setLoading(false);
@@ -28,8 +35,8 @@ function App() {
       <Hero>
         <Hero.Body>
           <Container style={containerStyle}>
-            <Title>Upcoming 5 events</Title>
-            <Button primary>Create Event + </Button>
+            <Heading>Upcoming 5 events</Heading>
+            <Button color="primary">Create Event + </Button>
           </Container>
         </Hero.Body>
       </Hero>
@@ -38,34 +45,38 @@ function App() {
   );
 }
 
-const Categories = ({ data = [], events = [], loading }) => {
+const Categories: FunctionComponent<{
+  data: unknown[];
+  events: unknown[];
+  loading: boolean;
+}> = ({ data = [], events = [], loading }) => {
   if (data.length < 0 || loading) {
     return (
       <Hero>
         <Hero.Body>
           <Container>
-            <Title>Loading...</Title>
+            <Heading>Loading...</Heading>
           </Container>
         </Hero.Body>
       </Hero>
     );
   }
-  return data.map(i => (
+  return data.map((i) => (
     <Hero key={i.id}>
       <Hero.Body>
         <Container>
-          <Title>{i.name}</Title>
+          <Heading>{i.name}</Heading>
         </Container>
       </Hero.Body>
       <Container
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
-          gridColumnGap: "3rem"
+          gridColumnGap: "3rem",
         }}
       >
         {events
-          .filter(event => event.categoryId === i.id)
+          .filter((event) => event.categoryId === i.id)
           .map((event, k) => (
             <Card key={k}>
               <Card.Header>
@@ -87,9 +98,5 @@ const Categories = ({ data = [], events = [], loading }) => {
     </Hero>
   ));
 };
-
-// const Events = () => (
-
-// )
 
 export default App;

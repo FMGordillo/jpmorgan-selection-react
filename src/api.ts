@@ -6,8 +6,9 @@ export const getCategories = () => axios.get("/categories");
 
 export const getEvents = () => axios.get("/events");
 
-/**
- *
- * @param {{name: String, category: Number}} event
- */
-export const createEvent = event => axios.post({ url: "/events", data: event });
+export const resetDb = () => {
+  console.log("Not implemented yet");
+};
+
+export const createEvent = (event: { name: string; category: number }) =>
+  axios.post("/events", event);
