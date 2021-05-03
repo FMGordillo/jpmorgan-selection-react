@@ -18,8 +18,8 @@ const containerStyle = {
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [categories, setCategories] = useState([]);
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState<Event[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
     axios.all([getCategories(), getEvents()]).then(
