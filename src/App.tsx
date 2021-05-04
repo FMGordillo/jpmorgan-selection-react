@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useState, useEffect, FunctionComponent } from "react";
+import { useState, FunctionComponent, useEffect } from "react";
 import {
   Button,
   Card,
@@ -8,8 +7,8 @@ import {
   Hero,
   Heading,
 } from "react-bulma-components";
-import { getCategories, getEvents } from "./api";
 import { Category, Event } from "./types";
+import { useData } from "./useData";
 
 const containerStyle = {
   display: "flex",
@@ -17,19 +16,12 @@ const containerStyle = {
 };
 
 function App() {
+  const { categories, events } = useData();
   const [loading, setLoading] = useState(true);
-  const [events, setEvents] = useState<Event[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
-    axios.all([getCategories(), getEvents()]).then(
-      axios.spread(function (categories, events) {
-        setCategories(categories.data);
-        setEvents(events.data);
-        setLoading(false);
-      })
-    );
-  }, [setLoading, setCategories]);
+    if (categories.length > 0 && events.length > 0) setLoading(false);
+  }, [categories.length, events.length]);
 
   return (
     <>

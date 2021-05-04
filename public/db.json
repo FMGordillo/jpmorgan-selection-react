@@ -1,0 +1,74 @@
+{
+  "events": [
+    {
+      "id": 0,
+      "name": "SCRUM Alliance Catch-up",
+      "description": "Monthly catch-up from SCRUM Alliance",
+      "location": "Palo Alto - California",
+      "date": "2022-02-02",
+      "categoryId": 0
+    },
+    {
+      "id": 1,
+      "name": "Burgers at Dellepiane",
+      "description": "Join the whole team for burgers at Dellepiane",
+      "location": "Luis Dellepiane 685",
+      "date": "2022-05-31",
+      "categoryId": 2
+    },
+    {
+      "id": 2,
+      "name": "Brazilian Fight Club",
+      "description": "Jiu jitsu and wrestling",
+      "location": "Corrientes 242",
+      "date": "2022-05-01",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Skip level lunch",
+      "description": "Lunch for networking and team building",
+      "location": "Root Bar Cafe",
+      "date": "2022-06-20",
+      "categoryId": 0
+    },
+    {
+      "id": 4,
+      "name": "Feed our Bearded Dragons",
+      "description": "Feed wild & free Bearded Dragons",
+      "location": "Palermo woods",
+      "date": "2023-11-10",
+      "categoryId": 3
+    },
+    {
+      "id": 5,
+      "name": "Helping goats",
+      "description": "Come to help our little friends",
+      "location": "La Noria Bridge",
+      "date": "2022-08-02",
+      "categoryId": 3
+    },
+    {
+      "id": 6,
+      "name": "Pokemon GO classes for elders",
+      "description": "Come and share your expertise",
+      "location": "Lanus City",
+      "date": "2022-10-02",
+      "categoryId": 3
+    },
+    {
+      "id": 7,
+      "name": "Wine Taste",
+      "description": "Come to taste the best wines in Argentina",
+      "location": "Bodega The Goat",
+      "date": "2022-01-02",
+      "categoryId": 2
+    }
+  ],
+  "categories": [
+    { "id": 0, "name": "Work" },
+    { "id": 1, "name": "Sportive" },
+    { "id": 2, "name": "Lunches" },
+    { "id": 3, "name": "Voluntary Service" }
+  ]
+}
